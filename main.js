@@ -34,23 +34,43 @@ console.log(google.maps.marker);
 // This begins section of code that toggles link menus
 // This begins section of code that toggles link menus
 
-
+//Find a spot button functionality
 var find = document.getElementById("find");
+var closeFindMenuButton = document.getElementById("closeFindMenu");
 
 function findClick() {
-  var Menu = document.getElementById("findMenu")
-  console.log("click");
+  var Menu = document.getElementById("findMenu");
+
   Menu.style.visibility = "visible";
 }
 
-find.addEventListener('click', findClick);
+function closeFindMenu() {
+  var Menu = document.getElementById("findMenu");
 
-var findClose = document.getElementById("close");
-
-function close() {
-   var Menu = document.getElementById("findMenu")
   Menu.style.visibility = "hidden";
 }
 
-findClose.addEventListener('click', close);
+find.addEventListener('click', findClick);
+closeFindMenuButton.addEventListener('click', closeFindMenu);
+
+//Sell a spot button functionality
+var sellLink = document.getElementById("sell");
+var closeSellMenuButton = document.getElementById("closeSellMenu");
+
+function sellClick() {
+  var sellerMenu = document.getElementById("sellMenu");
+
+  sellerMenu.style.visibility = "visible";
+}
+
+sellLink.addEventListener('click', sellClick)
+
+function closeSellMenu() {
+  var sellerMenu = document.getElementById("sellMenu");
+
+  sellerMenu.style.visibility = "hidden";
+}
+
+closeSellMenuButton.addEventListener('click', closeSellMenu);
+
 

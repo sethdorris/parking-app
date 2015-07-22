@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  width: 375px;
 }
 
 .container {
@@ -7,13 +8,18 @@ body {
   padding: 0;
 }
 
+#panel ul {
+  margin-left: -34px;
+  position: relative;
+}
+
 #panel ul li {
   display: inline;
   list-style-type: none;
   border: 1px solid black;
-  padding: 1em;
+  padding: .7em;
   font-family: Tahoma;
-  font-size: 10pt;
+  font-size: 8pt;
 }
 
 #panel a {
@@ -64,10 +70,10 @@ footer {
 #map-canvas {
   border: 1px solid black;
   height: 400px;
-  width: 400px;
+  width: 300px;
 }
 section#map-canvas {
-  margin: 0 auto;
+  margin: 1px auto;
 }
 
 #findMenu {
@@ -79,8 +85,36 @@ section#map-canvas {
   left: 40px;
   border-radius: 5px;
   visibility: hidden;
+  background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+}
+
+#sellMenu {
+  border: 1px solid black;
+  width: 250px;
+  height: 200px;
+  position: absolute;
+  top: 60px;
+  left: 40px;
+  border-radius: 5px;
+  visibility: hidden;
+  background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
 }
 
 #search {
   margin: 5px 10px;
 }
+
+div#findMenu label {
+  font-family: Verdana;
+  font-size: 8pt;
+  margin-left: 5px;
+  color: white;
+}
+
+div#sellMenu label {
+  font-family: Verdana;
+  font-size: 8pt;
+  margin-left: 5px;
+  color: white;
+}
+
