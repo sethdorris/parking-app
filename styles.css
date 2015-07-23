@@ -9,8 +9,8 @@ body {
 }
 
 #panel ul {
-  margin-left: -34px;
-  position: relative;
+  display: inline;
+  margin: 2px 2px;
 }
 
 #panel ul li {
@@ -20,15 +20,12 @@ body {
   padding: .7em;
   font-family: Tahoma;
   font-size: 8pt;
+  margin: 2px 2px;
 }
 
 #panel a {
   color: white;
-}
-
-.login {
-  float: right;
-  display: inline;
+  text-decoration: none;
 }
 
 header {
@@ -37,19 +34,6 @@ header {
   padding: 0;
   background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
   overflow: scroll;
-}
-
-.login {
-  margin: 0;
-}
-
-.login a {
-  text-decoration: none;
-}
-
-.main-nav a {
-  text-decoration: none;
-  color: white;
 }
 
 #panel li:hover,
@@ -94,7 +78,7 @@ section#map-canvas {
   height: 200px;
   position: absolute;
   top: 60px;
-  left: 40px;
+  left: 60px;
   border-radius: 5px;
   visibility: hidden;
   background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);

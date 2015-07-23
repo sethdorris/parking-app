@@ -1,34 +1,30 @@
-var geocoder; 
+//GOOLGLE MAPS API
+var myLatlng = new google.maps.LatLng(38.9047, -77.0164)
+var mapOptions = {
+  zoom: 8,
+  center: myLatlng,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+var map = new google.maps.Map(document.getElementById("map-canvas"),
+    mapOptions);
 
-//GOOGLE MAPS FUNCTION
-function initialize() {
-    var mapCanvas = document.getElementById('map-canvas');
-        var mapOptions = {
-          center: new google.maps.LatLng(38.9047, -77.0164),
-          zoom: 12,
-          mapTypeId: google.maps.MapTypeId.ROADMAP,
-          zoomControlOptions: {
-            style: google.maps.ZoomControlStyle.SMALL,
-            position: google.maps.ControlPosition.TOP_RIGHT
-          }
-        }
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-        var startPosition = new google.maps.Marker({
-          position: pinLocation,
-          map: map,
-          title: 'Parking Spot: $15/Day',
-          icon: {
-            path: google.maps.SymbolPath.CIRCLE,
-            scale: 4
-          }
-  })
-}
-      google.maps.event.addDomListener(window, 'load', initialize);
+var geocoder = new google.maps.Geocoder();
 
-var pinLocation = new google.maps.LatLng(38.9047, -77.0164);
-
-console.log(google.maps.marker);
-
+function codeAddress() {
+    var address = document.getElementById("sellAddress").value;
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location
+        });
+        marker.setMarker(map);
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
+  }
 
 // This begins section of code that toggles link menus
 // This begins section of code that toggles link menus
@@ -72,5 +68,10 @@ function closeSellMenu() {
 }
 
 closeSellMenuButton.addEventListener('click', closeSellMenu);
+
+
+  var sellBtn = document.getElementById("sellSubmit");
+  sellBtn.addEventListener('click', codeAddress);
+  sellBtn.addEventListener('click', closeSellMenu);
 
 
