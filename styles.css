@@ -1,16 +1,19 @@
 body {
   margin: 0;
-  width: 375px;
+  width: 1000px;
 }
 
 .container {
-  margin: 0;
-  padding: 0;
+  
+}
+
+nav#panel {
+  margin: 0 auto;
+  width: 38%
 }
 
 #panel ul {
   display: inline;
-  margin: 2px 2px;
 }
 
 #panel ul li {
@@ -20,7 +23,11 @@ body {
   padding: .7em;
   font-family: Tahoma;
   font-size: 8pt;
-  margin: 2px 2px;
+  margin: 2em 2px;
+}
+
+.main-nav ul {
+  margin: 20px;
 }
 
 #panel a {
@@ -31,7 +38,7 @@ body {
 header {
   border: 1px solid black;
   margin: 0;
-  padding: 0;
+  padding: .5em;
   background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
   overflow: scroll;
 }
@@ -54,7 +61,7 @@ footer {
 #map-canvas {
   border: 1px solid black;
   height: 400px;
-  width: 300px;
+  width: 80%;
 }
 section#map-canvas {
   margin: 1px auto;
@@ -74,13 +81,15 @@ section#map-canvas {
 
 #sellMenu {
   border: 1px solid black;
-  width: 250px;
+  padding-top: 1.7em;
+  width: 350px;
   height: 200px;
   position: absolute;
-  top: 60px;
-  left: 60px;
+  left: 300px;
+  top: 100px;
   border-radius: 5px;
   visibility: hidden;
+  box-shadow: 1px 1px 2px black;
   background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
 }
 
@@ -98,7 +107,30 @@ div#findMenu label {
 div#sellMenu label {
   font-family: Verdana;
   font-size: 8pt;
-  margin-left: 5px;
+  margin-left: 3em;
   color: white;
 }
+
+input#sellAddress {
+  margin-left: 4.1em;
+}
+
+input#spacenumber {
+  margin-left: 2.3em;
+}
+
+input#sellprice {
+  margin-left: 5.2em;
+}
+
+input#sellDuration {
+  margin-left: 1.85em;
+}
+
+button#closeSellMenu {
+  margin: 2em 5em;
+}
+
+
+
 
